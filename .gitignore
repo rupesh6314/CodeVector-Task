@@ -1,2 +1,5 @@
 .env
 node_modules
+products.db
+products.db-shm
+products.db-wal
