@@ -1,0 +1,30 @@
+//provider
+generator clinet{
+  provider="prisma-client-js
+}
+//db that prisma needs to connect
+datasource db{
+  provider="postgresql"
+  url=env("DATABASE_URI")
+}
+//model of db 
+model Product{
+  id         String @id@default(uuid())
+  name       String
+  category   String
+  price      Float
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@index([category,created_at(sort:Desc),id(sort:Desc)])
+  @@index([created_at(sort:Desc),id(sort:Desc)])
+
+  @@unique(created_at,id)
+
+  @@map("products")
+}
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VectorMart - Next Gen Browsing</title>
+    <meta name="description" content="Browse millions of products with zero latency using cursor-based pagination.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="glass-header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h1>VectorMart</h1>
+                </div>
+                
+                <div class="filters">
+                    <div class="select-wrapper">
+                        <select id="category-filter" aria-label="Filter by category">
+                            <option value="">All Categories</option>
+                            <!-- Options injected by JS -->
+                        </select>
+                        <div class="select-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats-bar">
+                <span id="results-count">Loading products...</span>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button id="simulate-insert-btn" style="background: rgba(147, 51, 234, 0.2); border: 1px solid rgba(147, 51, 234, 0.5); color: #e9d5ff; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">
+                        + Simulate Live Insert (50)
+                    </button>
+                    <span class="live-indicator"><span class="pulse"></span> Live Sync Active</span>
+                </div>
+            </div>
+
+            <div id="products-grid" class="products-grid">
+                <!-- Product cards injected by JS -->
+            </div>
+
+            <div class="loading-state" id="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+
+            <div class="actions">
+                <button id="load-more" class="primary-btn" style="display: none;">
+                    Load More
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
