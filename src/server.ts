@@ -150,6 +150,11 @@ process.on('SIGINT', async () => {
   process.exit();
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
+
+// Export the app for Vercel serverless
+module.exports = app;
